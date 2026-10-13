@@ -1,0 +1,4 @@
+// Shared settings for the sample. The API key lives in Secrets.xcconfig (git-ignored):
+//   cp Config/Secrets.example.xcconfig Config/Secrets.xcconfig
+TMAPS_API_KEY =
+#include? "Secrets.xcconfig"

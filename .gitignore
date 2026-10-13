@@ -1,0 +1,11 @@
+.DS_Store
+/.build
+/Packages
+.swiftpm/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+Package.resolved
+
+# API key — like local.properties on Android
+Examples/TMapsSample/Config/Secrets.xcconfig

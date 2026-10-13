@@ -1,0 +1,51 @@
+name: TMapsSample
+options:
+  bundleIdPrefix: tn.tmaps
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+packages:
+  TMaps:
+    path: ../..
+configFiles:
+  Debug: Config/Sample.xcconfig
+  Release: Config/Sample.xcconfig
+targets:
+  TMapsSample:
+    type: application
+    platform: iOS
+    sources:
+      - TMapsSample
+    dependencies:
+      - package: TMaps
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tn.tmaps.sample
+        MARKETING_VERSION: "0.2.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: NO
+    info:
+      path: TMapsSample/Info.plist
+      properties:
+        CFBundleDisplayName: TMaps Sample
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        # Filled from Config/Secrets.xcconfig, which stays out of git (like local.properties).
+        TMapsAPIKey: $(TMAPS_API_KEY)
+        NSLocationWhenInUseUsageDescription: The sample shows your position on the map.
+schemes:
+  TMapsSample:
+    build:
+      targets:
+        TMapsSample: all
+    run:
+      config: Debug
