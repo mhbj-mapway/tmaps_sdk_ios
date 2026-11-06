@@ -59,7 +59,7 @@ request (the style, the .pbf tiles, sprites and glyphs).
 In Xcode: *File → Add Package Dependencies…* and enter the repository URL, or in `Package.swift`:
 
 ```swift
-.package(url: "https://bitbucket.org/apps-hub/tmaps_sdk_ios.git", from: "0.2.0")
+.package(url: "https://github.com/mhbj-mapway/tmaps_sdk_ios.git", from: "0.2.0")
 // target: .product(name: "TMaps", package: "tmaps_sdk_ios")
 ```
 
@@ -201,10 +201,10 @@ code is compiled out; on macOS run them on an iOS simulator from Xcode, or with
 
 ## Publishing
 
-- **Swift Package Manager (recommended):** the package lives at
-  `https://bitbucket.org/apps-hub/tmaps_sdk_ios.git`; a release is a pushed semver tag
-  (`0.2.0`, no `v` prefix) matching `TMaps.version`. Users add the repository URL in Xcode.
-  Nothing else to host. While the repo is private, apps need Bitbucket access to resolve it.
+- **Swift Package Manager (recommended):** the public package is
+  `https://github.com/mhbj-mapway/tmaps_sdk_ios.git`, a mirror of the Bitbucket repo
+  (`apps-hub/tmaps_sdk_ios`). A release is a semver tag (`0.2.0`, no `v` prefix) matching
+  `TMaps.version`, pushed to both remotes. Users add the GitHub URL in Xcode. Nothing else to host.
 - **CocoaPods / binary xcframework:** not set up. If you build an xcframework with
   library evolution, rename the `TMaps` enum or the module first — a type named like its
   module breaks `.swiftinterface` files.
